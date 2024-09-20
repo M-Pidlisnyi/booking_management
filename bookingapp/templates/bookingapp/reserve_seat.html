@@ -1,0 +1,14 @@
+
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="flight">
+    <input type="text" name="passenger" value="{{request.user.passenger}}">
+    <input type="submit">
+    <select>
+        {% for ... %}
+            <option  ... > 
+                ...
+            </option>
+        {% endfor %}
+    </select>
+</form>
