@@ -1,6 +1,9 @@
+{% extends 'bookingapp/base.html' %}
 
-{% for flight in flight_list %}
+{% block content %}
+    {% for flight in flight_list %}
 
-<p> {{flight}} </p>
+    <p> {{flight}} </p>
 
-{% endfor %}
+    {% endfor %}
+{%endblock%}

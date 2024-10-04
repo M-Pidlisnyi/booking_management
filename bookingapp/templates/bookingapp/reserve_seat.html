@@ -1,14 +1,23 @@
+{% extends 'bookingapp/base.html' %}
 
-<form method="post">
+{% block content %}
+<form method="post" class="my-form">
     {% csrf_token %}
-    <input type="number" name="flight">
-    <input type="text" name="passenger" value="{{request.user.passenger}}">
-    <input type="submit">
-    <select>
-        {% for ... %}
-            <option  ... > 
-                ...
-            </option>
-        {% endfor %}
-    </select>
+    <div class="mb-3"> 
+        <label class="form-label">Введіть номер рейсу для бронювання</label>
+        <input type="number" name="flight" class="form-control">
+    </div>
+   
+
+    <div class="mb-3">
+        <input type="text" name="passenger" value="{{request.user.passenger}}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <input type="datetime-local" name="booking_time" class="form-control">
+    </div>
+
+    <input type="submit" class="btn btn-primary">
 </form>
+
+{% endblock %}
